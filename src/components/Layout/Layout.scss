@@ -1,6 +1,18 @@
 @import '../../styles/_var.scss';
 
-.title {
-  font-size: 24px;
-  color: $global_blue;
+ul.nav_container {
+  margin: 0;
+  padding: 20px 10%;
+  background-color: $bgc_color;
+
+  li {
+    margin: 5px 0;
+  }
+
+  a {
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: $document_color;
+  }
 }
