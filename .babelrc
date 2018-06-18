@@ -1,0 +1,16 @@
+{
+  "presets": [
+    "@babel/preset-env",
+    "next/babel"
+  ],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": [
+          "./src"
+        ]
+      }
+    ]
+  ]
+}
