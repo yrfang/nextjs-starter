@@ -1,0 +1,28 @@
+{
+  "name": "nextjs-react-redux-filter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/yrfang/nextjs-react-redux-filter.git",
+  "author": "Ying Ru <fyr1116@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon server/index.js",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "next": "^6.0.3",
+    "next-routes": "^1.4.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.9.1",
+    "nodemon": "^1.17.5"
+  }
+}
