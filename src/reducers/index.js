@@ -1,8 +1,10 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from 'redux-immutable';
 import countReducers from './countReducers';
+import textReducers from './textReducers';
 
 const rootReducer = combineReducers({
-  count: countReducers
+  count: countReducers,
+  text: textReducers
 });
 
 export default rootReducer;

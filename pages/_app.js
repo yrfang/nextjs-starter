@@ -1,22 +1,31 @@
-import App, { Container } from 'next/app';
 import React from 'react';
-import withReduxStore from 'store/with-redux-store';
 import { Provider } from 'react-redux';
+import App, { Container } from 'next/app';
+import withRedux from 'next-redux-wrapper';
+import { initStore } from 'store/createStore';
 import Layout from 'components/Layout';
+import { fromJS, toJS } from 'immutable';
 
 class MyApp extends App {
+  static async getInitialProps({ Component, ctx }) {
+    return {
+      pageProps: (Component.getInitialProps ? await Component.getInitialProps(ctx) : {})
+    }
+  }
+
   render() {
-    const { Component, pageProps, reduxStore } = this.props
-    return (
-      <Container>
-        <Provider store={reduxStore}>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </Provider>
-      </Container>
-    );
+    const { Component, pageProps, store } = this.props
+    return <Container>
+      <Provider store={store}>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </Provider>
+    </Container>
   }
 }
 
-export default withReduxStore(MyApp);
+export default withRedux(initStore, {
+  serializeState: state => state.toJS(),
+  deserializeState: state => fromJS(state)
+})(MyApp);

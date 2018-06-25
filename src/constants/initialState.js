@@ -1,6 +1,10 @@
-export const initialState = {
+import { fromJS } from 'immutable';
+
+export const initialState = fromJS({
   count: {
-    count: 5,
-    text: 'First Nextjs example with Redux'
+    count: 0
+  },
+  text: {
+    title: 'First Nextjs example with Redux'
   }
-}
+});

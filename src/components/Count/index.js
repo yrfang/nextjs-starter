@@ -12,7 +12,7 @@ class Counter extends Component {
   render() {
     const { 
       count,
-      text,
+      title,
       incrementCount,
       decrementCount
     } = this.props;
@@ -20,7 +20,7 @@ class Counter extends Component {
     return (
       <div>
         <h1>Count: <span>{count}</span></h1>
-        <h2>{text}</h2>
+        <h2>{title}</h2>
         <button onClick={incrementCount}>+1</button>
         <button onClick={decrementCount}>-1</button>
         <button onClick={this.reset}>Reset</button>
@@ -30,9 +30,9 @@ class Counter extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return { 
-    count: state.count.count,
-    text: state.count.text
+  return {
+    count: state.getIn(['count', 'count']),
+    title: state.getIn(['text', 'title'])
   }
 }
 

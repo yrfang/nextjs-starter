@@ -1,19 +1,21 @@
 import * as ActionTypes from 'constants/types';
 import { initialState } from 'constants/initialState';
 
-const countReducers = (state = initialState, action) => {
+const countInitialState = initialState.get('count');
+
+const countReducers = (state = countInitialState, action) => {
   switch (action.type) {
     case ActionTypes.INCREMENT:
-      return Object.assign({}, state, {
-        count: state.count + 1
+      return state.merge({
+        count: state.get('count') + 1
       });
     case ActionTypes.DECREMENT:
-      return Object.assign({}, state, {
-        count: state.count - 1
+      return state.merge({
+        count: state.get('count') - 1
       });
     case ActionTypes.RESET:
-      return Object.assign({}, state, {
-        count: initialState.count.count
+      return state.merge({
+        count: countInitialState.get('count')
       });
 
     default: return state
