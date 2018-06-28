@@ -15,9 +15,7 @@ const Layout = (props) => {
           <a href="/" title="Home">Home</a>
         </li>
         <li>
-          <Link href="/about">
-            <a title="About">About</a>
-          </Link>
+          <a href="/about" title="about">About</a>
         </li>
       </ul>
       <section className="page_container">

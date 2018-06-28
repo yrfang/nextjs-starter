@@ -1,13 +1,14 @@
 import * as actionTypes from 'constants/types';
 
-export const incrementCount = () => dispatch => {
-  return dispatch({ type: actionTypes.INCREMENT })
+// actions must be plain objects
+export function incrementCount() {
+  return { type: actionTypes.INCREMENT }
 }
 
-export const decrementCount = () => dispatch => {
-  return dispatch({ type: actionTypes.DECREMENT })
+export function decrementCount() {
+  return { type: actionTypes.DECREMENT }
 }
 
-export const resetCount = () => dispatch => {
-  return dispatch({ type: actionTypes.RESET })
+export function resetCount() {
+  return { type: actionTypes.RESET }
 }
