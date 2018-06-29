@@ -1,19 +1,19 @@
-import * as ActionTypes from 'constants/types';
+import * as actionTypes from 'constants/types';
 import { initialState } from 'constants/initialState';
 
 const countInitialState = initialState.get('count');
 
 const countReducers = (state = countInitialState, action) => {
   switch (action.type) {
-    case ActionTypes.INCREMENT:
+    case actionTypes.INCREMENT:
       return state.merge({
         count: state.get('count') + 1
       });
-    case ActionTypes.DECREMENT:
+    case actionTypes.DECREMENT:
       return state.merge({
         count: state.get('count') - 1
       });
-    case ActionTypes.RESET:
+    case actionTypes.RESET:
       return state.merge({
         count: countInitialState.get('count')
       });

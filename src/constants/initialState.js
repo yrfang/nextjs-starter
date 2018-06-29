@@ -6,5 +6,9 @@ export const initialState = fromJS({
   },
   text: {
     title: 'First Nextjs example with Redux'
+  },
+  clock: {
+    lastUpdate: 0,
+    light: false
   }
 });
