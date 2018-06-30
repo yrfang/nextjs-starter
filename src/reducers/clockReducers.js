@@ -5,11 +5,10 @@ const clockInitialState = initialState.get('clock');
 
 const clockReducers = (state = clockInitialState, action) => {
   switch (action.type) {
-    case actionTypes.UPDATE_TICK:
+    case actionTypes.TICK_CLOCK:
       return state.merge({
         lastUpdate: action.ts,
-        light: !!action.light,
-        isServer: action.isServer
+        light: !!action.light
       });
 
     default: return state

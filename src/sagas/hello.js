@@ -4,8 +4,10 @@ export function* helloSaga() {
   console.log('Hello Sagas!');
 }
 
-export default function* root() {
+function* hello() {
   yield all([
     helloSaga()
   ]);
 }
+
+export default hello;

@@ -10,16 +10,14 @@ export function serverRenderClock(isServer) {
 
 export function startClock() {
   return {
-    type: actionTypes.TICK,
-    light: true,
-    ts: Date.now()
+    type: actionTypes.START_CLOCK
   }
 }
 
-export function updateClock() {
+export function tickClock(isServer) {
   return {
-    type: actionTypes.UPDATE_TICK,
-    light: true,
+    type: actionTypes.TICK_CLOCK,
+    light: !isServer,
     ts: Date.now()
   }
 }

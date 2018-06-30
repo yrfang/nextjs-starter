@@ -8,10 +8,12 @@ import Layout from 'components/Layout';
 import { fromJS } from 'immutable';
 
 class MyApp extends App {
-  static async getInitialProps({ Component, ctx }) {
-    const pageProps = Component.getInitialProps
-      ? await Component.getInitialProps(ctx)
-      : {};
+  static async getInitialProps ({ Component, ctx }) {
+    let pageProps = {};
+
+    if (Component.getInitialProps) {
+      pageProps = await Component.getInitialProps({ ctx });
+    }
 
     return { pageProps };
   }
