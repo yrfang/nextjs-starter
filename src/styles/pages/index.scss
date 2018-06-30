@@ -1,0 +1,11 @@
+// postCss example
+
+.next_container {
+  margin-top: 40px;
+
+  .title {
+    filter: blur(1px);
+  }
+}
+
+

@@ -15,10 +15,8 @@
     "@zeit/next-sass": "^0.2.0",
     "axios": "^0.18.0",
     "babel-plugin-module-resolver": "^3.1.1",
-    "es6-promise": "^4.2.4",
     "express": "^4.16.3",
     "immutable": "^3.8.2",
-    "isomorphic-unfetch": "^2.0.0",
     "next": "^6.0.3",
     "next-redux-saga": "^3.0.0-beta.1",
     "next-redux-wrapper": "^2.0.0-beta.6",
@@ -34,6 +32,8 @@
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
-    "nodemon": "^1.17.5"
+    "autoprefixer": "^8.6.4",
+    "nodemon": "^1.17.5",
+    "postcss-easy-import": "^3.0.0"
   }
 }

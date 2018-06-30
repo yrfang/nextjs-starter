@@ -1,9 +1,9 @@
 import React from 'react';
-import 'isomorphic-unfetch';
 import { connect } from 'react-redux';
 
 import { loadData } from 'actions/nextActions';
 import Count from 'components/Count';
+import styles from 'styles/pages/index.scss';
 
 class Index extends React.Component {
   static async getInitialProps(props) {
@@ -21,7 +21,8 @@ class Index extends React.Component {
       <div>
         <Count />
 
-        <div style={{ marginTop: '40px' }}>
+        <div className={styles.next_container}>
+          <h1 className={styles.title}>Hey hey</h1>
           <a href={placeholderData.get('html_url')} target="_blank">
             <h3>Next's github</h3>
           </a>
