@@ -1,19 +1,15 @@
 import { all, call, put, take, takeLatest } from 'redux-saga/effects';
-import es6promise from 'es6-promise';
-import 'isomorphic-unfetch';
 
 import * as actionTypes from 'constants/types';
 import { failure, loadDataSuccess } from 'actions/nextActions';
-
-es6promise.polyfill();
+import { fetchNextData } from 'api/next';
 
 function* loadDataSaga() {
   try {
-    const res = yield fetch('https://api.github.com/repos/zeit/next.js')
-    const data = yield res.json()
-    yield put(loadDataSuccess(data))
+    const res = yield call(fetchNextData);
+    yield put(loadDataSuccess(res));
   } catch (err) {
-    yield put(failure(err))
+    yield put(failure(err));
   }
 }
 
