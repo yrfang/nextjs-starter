@@ -11,7 +11,7 @@ Next.js is a lightweight framework for static and server‑rendered applications
 - State management with [redux](https://github.com/reduxjs/redux) and [next-redux-wrapper](https://github.com/kirill-konshin/next-redux-wrapper)
 - Async flow managment library with [redux-saga](https://github.com/redux-saga/redux-saga) and [next-redux-saga](https://github.com/bmealhouse/next-redux-saga)
 - Persistent data collections for Javascript with [Immutalbe](https://github.com/facebook/immutable-js/)
-- Promise based HTTP request to the server with [Axios](https://github.com/axios/axios)
+- Send request to the server with [Axios](https://github.com/axios/axios)
 - Stylying with SCSS with CSS pre-processor
 - Styling with PostCss with CSS post-processor
 - Setting up a custom alias for directories with [babel-plugin-module-resolver](https://github.com/tleunen/babel-plugin-module-resolver)
