@@ -14,8 +14,6 @@ const Clock = ({
   light
 }) => {
 
-  console.log(new Date(lastUpdate))
-
   return (
     <div className={light ? 'light' : ''}>
       {format(new Date(lastUpdate))}

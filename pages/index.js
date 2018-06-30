@@ -1,23 +1,44 @@
 import React from 'react';
 import 'isomorphic-unfetch';
+import { connect } from 'react-redux';
+
+import { loadData } from 'actions/nextActions';
 import Count from 'components/Count';
 
 class Index extends React.Component {
-  static async getInitialProps() {
-    // eslint-disable-next-line no-undef
-    const res = await fetch('https://api.github.com/repos/zeit/next.js')
-    const json = await res.json()
-    return { stars: json.stargazers_count }
+  static async getInitialProps(props) {
+    const { store } = props.ctx;
+
+    if (!store.getState().placeholderData) {
+      store.dispatch(loadData());
+    }
   }
 
   render() {
+    const { placeholderData } = this.props;
+
     return (
       <div>
         <Count />
-        <p>Next.js has <mark>{this.props.stars}</mark> ⭐️</p>
+
+        <div style={{ marginTop: '40px' }}>
+          <a href={placeholderData.get('html_url')} target="_blank">
+            <h3>Next's github</h3>
+          </a>
+          {/* <img src={placeholderData.get('homepage')} /> */}
+          <p>componay: {placeholderData.get('organization').get('login')}</p>
+          <p>{placeholderData.get('description')}</p>
+          <p>Next.js has <mark>{placeholderData.get('stargazers_count')}</mark> ⭐️</p>
+        </div>
       </div>
     )
   }
 }
 
-export default Index;
+const mapStateToProps = (state) => {
+  return {
+    placeholderData: state.getIn(['next', 'placeholderData'])
+  }
+}
+
+export default connect(mapStateToProps)(Index);

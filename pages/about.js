@@ -22,6 +22,7 @@ class About extends React.Component {
     return (
       <div>
         <p>Next with Redux-Saga</p>
+        <p>UTC timezone:</p>
         <Clock lastUpdate={lastUpdate} light={light} />
       </div>
     );

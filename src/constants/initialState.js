@@ -10,5 +10,8 @@ export const initialState = fromJS({
   clock: {
     lastUpdate: 0,
     light: false
+  },
+  next: {
+    placeholderData: null
   }
 });
